@@ -1,0 +1,28 @@
+import React from 'react';
+import Img from '../images/memeimg.png';
+import MemeData from '../memesData';
+export default function Main(){
+
+    function clicked (){
+        const meme = MemeData.data.memes;
+        let randomNumber = Math.floor(Math.random()* meme.length);
+        // console.log(randomNumber);
+        let memeImgURL = meme[randomNumber].url;
+        // console.log(meme[randomNumber].name);
+    }
+
+    return(
+        <div className='main'>
+            <form className="form">
+                <input type="name" name="" id="top" className="field" placeholder='Shut up'/>
+                <input type="name" name="" id="bottom" className="field" placeholder='and take my money'/>
+                <input type="button" value="Get a new meme image" onClick ={clicked} className="field" id="btn"/>
+                
+            </form>
+            <div className="img-container">
+            <img src={Img} alt="meme" id="memeimg"/>
+            </div>
+           
+        </div>
+    )
+}
